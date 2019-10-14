@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	
+	<script type="text/javascript">
+		/*var obj = [undefined,null,"abc",1,21];
+		数租一些基本增删添方法 push() pop() unshift()  shift()
+		
+		obj.push(2);
+		obj.unshift(3);
+		obj.pop();
+		obj.shift();
+		delete obj[1];
+		console.log(obj);
+		console.log(obj.length);
+		console.log(obj[1]);
+		
+		delete 数组中元素之后 该位置会显示empty,实际内容为undefined 该数组长度不变
+		
+		除去数组中空元素方法;
+		
+	    function MoveEmpty(arr){
+	          for(var i = 0; i<arr.length;i++){
+	    		  if(arr[i]==undefined){
+					  arr.splice(i,1);
+					  i--;
+				  }
+				  }
+				   return arr;
+	    	  }
+			 
+	 
+	    MoveEmpty(obj);
+
+		console.log(obj);
+		
+		
+		数组的通用方法
+		join(x); 让数组以x分隔输出字符串,
+		sort();数组首字母大小排序，数字首位大小排序;
+		reverse();数组倒序
+		concat();数组合并
+		slice(a,b);拷贝部分数组 左闭右开
+		splice(a,x,"字符串");删掉数组中部分内容,并向其中添加字符串内容
+		
+		
+		var x=obj.join("_");
+		console.log(x);
+		
+		undefined,null返回_;
+		
+		var y = obj.reverse();
+		console.log(y);
+		
+		var z = obj.concat([4,5,6]);
+		console.log(z);
+		*/
+	   
+	     /*
+	   var obj1=[13,24,3,51];
+	   console.log(obj1.sort());
+	   
+	   //把数组按从小到大排序
+	   
+	  var x= obj1.sort(function(a,b){
+	  		   return a-b;
+	  })
+	  console.log(x);
+	  //sort(a,b) 原理是进行了一个冒泡排序
+	  
+	
+	  var arr = new Array();
+	  function sort(arr){
+		  for(var i=0;i<arr.length;i++){
+			  for(var j=i+1;j<arr.length;j++){
+				  if(arr[i]>=arr[j]){
+					  var x;
+					  x=arr[i];
+					  arr[i]=arr[j];
+					  arr[j]=x
+				  }
+			  }
+		  }
+		  return arr;
+	  }
+	  
+	  console.log(sort(obj1));
+	  */
+	 
+	 
+	 //一维数组转二维数组  用slice()方法
+	 
+	 /*var  obj = [1,2,3,4,5,6,7,8,9];
+	 
+	function changeArray(Array){
+		 var arr=[];
+		 var x=Array.length%4==0?Array.length:Math.floor(Array.length/4+1);//x=3;
+		 var i;
+          for(var a=0;a<x;a++){
+               i=4*a;
+			   arr[a]=Array.slice(i,i+4);
+		  }
+         return arr;
+	 }
+
+	 console.log(changeArray(obj));
+	 let objarr=changeArray(obj);
+	 objarr[2]=[9,10,11,12];
+	 console.log(objarr[2]);
+	 */
+	
+	//布尔 数组 数字 字符串  null  undefined;
+	//数字类型的拷贝是强拷贝
+	
+	 //拓展:Array.slice()方法对于对象元素是弱拷贝,当数组元素是对象时,改变拷贝后的值,最初数组里的值也会随之改变.
+	 
+	 //数组元素为对象 例子
+	 
+	 /*
+	 var obj = [{a:1},{b:2},{c:3}];
+	 var obj1 = [];
+	 obj1=obj.slice(0,2);
+	 console.log(obj1);
+	 
+	 obj1[1].b=22;
+	 //该语句执行后 所有obj的第二个元素都是b:22
+	 //obj1[1]=[{b:22}]; 该方法是将obj1的第二个元素从属性改变成了数组
+	 
+	 console.log(obj1);
+     console.log(obj);
+	  */
+	  
+	  /*这里需要用到JSON.Stringify和JSON.parse方法
+	  let temp = Array.slice(i,i+4);
+	  arr.push(JSON.parse(JSON.stringify(temp)));
+	  */
+	  
+	  //数组去重方法 Array.splice()方法
+	  
+	  /*
+	  var obj = [21,12,33,45,65,78,99,12,45,77];
+	  
+	  function Moverea(Array){
+	  for(var i =0;i<Array.length;i++){
+		  for(var j=i+1;j<Array.length;j++){
+			  if(Array[i]==Array[j]){
+				  Array.splice(j,1);
+			  }
+		  }
+	  }
+	  return Array;
+	  }
+	  
+	  console.log(Moverea(obj));
+	  */
+	 
+	 
+	 
+	 /* 
+	 1:去除数组空元素方法
+	 2：一维数组转化为二维数组
+	 3：数组去重
+	 4：数组从小到大排序
+	 */
+	  
+	  
+	  //基于ES6的数组方法
+	  /*
+	  Array.every();
+	  Array.some();
+	  Array.foreach();
+	  Array.map();数组映射
+	  Array.filter();数组过滤
+	  Array.reduce();
+	  Array.indexof();数组检索
+	  Array.isArray();
+	  
+	  */
+	 
+	 
+	 //Array.foreach(function(x,index,a){})  x:value,index:索引  a:数组
+	  
+	  /*
+	  var obj = [1,2,3,4,5,6];
+	  obj.forEach(function(x,index,a){
+		  console.log(x+'/'+index+'/'+a);
+	  })
+	  */
+	 
+	 /*
+	 Array.map(function(x){});  x:value
+	 
+	 var obj = [1,2,3,4,5,6];
+	 var arr=obj.map(function(x){
+		 return x=x+10;
+	 });
+	  console.log(arr);
+	  
+	  */
+	 
+	 /*
+	 Array.fliter(function(x,index){});   x:value, index:索引
+	 
+	var obj=[1,2,3,4,5,6,7,8,9];
+	var arr=obj.filter(function(x,index){
+		return index%3==0&&x>6;
+	})
+	console.log(arr);
+	 */
+	
+	/*
+	Array.every(function(x){})和Array.some(function(x){})方法返回的是一个布尔型数据 x:value
+
+	var obj=[1,2,3,4,5,6];
+	var x = obj.every(function(x){
+		return x<10;
+	})
+	console.log(x);
+	*/
+   
+   /*
+   Array.reduce(function(x,y){});对数组里的元素进行操作 x=Array[0] y=Array[Array.length-1];
+   
+   
+   var obj=[1,2,3,4,5,6];
+   var a = obj.reduce(function(x,y){
+	   return y;
+   })
+   console.log(a);
+   */
+  
+  
+	</script>
+	
+	<body>
+	</body>
+</html>
